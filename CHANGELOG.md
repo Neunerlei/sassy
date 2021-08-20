@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.3](https://github.com/Neunerlei/sassy/compare/v3.0.2...v3.0.3) (2021-08-20)
+
+
+### Bug Fixes
+
+* **CssReset:** add address style reset ([b110d8f](https://github.com/Neunerlei/sassy/commit/b110d8f0e312ac208063c2aa0e819d0f049a7ef3))
+
 ### [3.0.2](https://github.com/Neunerlei/sassy/compare/v3.0.1...v3.0.2) (2021-05-28)
 
 ### [3.0.1](https://github.com/Neunerlei/sassy/compare/v3.0.0...v3.0.1) (2020-08-09)
