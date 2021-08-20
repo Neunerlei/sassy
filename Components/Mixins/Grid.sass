@@ -114,12 +114,12 @@
   @if (map-has-key($override, xs))
     width: map-get($override, xs)
   @else
-    width: calc(#{$sassyContainerWidthXs} - #{$sassyGutterHorizontal})
+    width: calc(#{$sassyContainerWidthXs} - #{$sassyContainerMarginXs})
   +bpXxs
     @if (map-has-key($override, xxs))
       width: map-get($override, xxs)
     @else
-      width: calc(#{$sassyContainerWidthXxs} - #{$sassyGutterHorizontal})
+      width: calc(#{$sassyContainerWidthXxs} - #{$sassyContainerMarginXxs})
   +bpSmAndBigger()
     @if (map-has-key($override, sm))
       width: map-get($override, sm)
