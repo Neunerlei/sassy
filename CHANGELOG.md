@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.1.1](https://github.com/Neunerlei/sassy/compare/v3.1.0...v3.1.1) (2022-06-03)
+
+
+### Bug Fixes
+
+* use multiplcation or calc instead of division ([4113ee6](https://github.com/Neunerlei/sassy/commit/4113ee6806575a6f84c307b44a632c93a9664e84))
+
 ## [3.1.0](https://github.com/Neunerlei/sassy/compare/v3.0.4...v3.1.0) (2021-08-20)
 
 
