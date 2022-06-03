@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.1.2](https://github.com/Neunerlei/sassy/compare/v3.1.1...v3.1.2) (2022-06-03)
+
+
+### Bug Fixes
+
+* **Grid:** calculate flex-basis correctly again ([21a8080](https://github.com/Neunerlei/sassy/commit/21a8080c720b154abad6a15fb53924ce10f8f071))
+
 ### [3.1.1](https://github.com/Neunerlei/sassy/compare/v3.1.0...v3.1.1) (2022-06-03)
 
 
