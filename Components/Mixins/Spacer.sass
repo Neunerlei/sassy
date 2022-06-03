@@ -9,9 +9,9 @@
  *
 =st($spacerType: 1)
   @if length($sassySpacerMultipliers) < $spacerType
-    margin-top: #{$spacerType * 3 * $sassySpacerBase}
+    margin-top: calc(#{$spacerType} * 3 * #{$sassySpacerBase})
   @else
-    margin-top: nth($sassySpacerMultipliers, $spacerType) * $sassySpacerBase
+    margin-top: calc(#{nth($sassySpacerMultipliers, $spacerType)} * #{$sassySpacerBase})
     
 /**
  * Adds a margin to the bottom of the element.
@@ -19,6 +19,6 @@
  *
 =sb($spacerType: 1)
   @if length($sassySpacerMultipliers) < $spacerType
-    margin-bottom: #{$spacerType * 3 * $sassySpacerBase}
+    margin-bottom: calc(#{$spacerType} * 3 * #{$sassySpacerBase})
   @else
-    margin-bottom: nth($sassySpacerMultipliers, $spacerType) * $sassySpacerBase
+    margin-bottom: calc(#{nth($sassySpacerMultipliers, $spacerType)} * #{$sassySpacerBase})

@@ -27,7 +27,7 @@
  * Creates a container that has always a fixed size ratio
  * even when the outer container is scaled based on the width
 =proportionalContainer($width, $height)
-  padding-top: percentage(($height / $width))
+  padding-top: calc(#{$height} / #{$width})
   
 /**
  * Renders it's content only when printed and not on a screen

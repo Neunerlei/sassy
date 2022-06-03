@@ -38,31 +38,31 @@
         $gr: sassyAutoGutterFallback(nth($gutter, 2), $sgh)
     @else
       @if length($gutter) == 2
-        $gt: sassyAutoGutterFallback(nth($gutter, 1), $sgv) / 2
-        $gr: sassyAutoGutterFallback(nth($gutter, 2), $sgh) / 2
+        $gt: sassyAutoGutterFallback(nth($gutter, 1), $sgv) * 0.5
+        $gr: sassyAutoGutterFallback(nth($gutter, 2), $sgh) * 0.5
         $gb: $gt
         $gl: $gr
       @else if length($gutter) == 4
-        $gt: sassyAutoGutterFallback(nth($gutter, 1), $sgv) / 2
-        $gr: sassyAutoGutterFallback(nth($gutter, 2), $sgh) / 2
-        $gb: sassyAutoGutterFallback(nth($gutter, 3), $sgv) / 2
-        $gl: sassyAutoGutterFallback(nth($gutter, 4), $sgh) / 2
+        $gt: sassyAutoGutterFallback(nth($gutter, 1), $sgv) * 0.5
+        $gr: sassyAutoGutterFallback(nth($gutter, 2), $sgh) * 0.5
+        $gb: sassyAutoGutterFallback(nth($gutter, 3), $sgv) * 0.5
+        $gl: sassyAutoGutterFallback(nth($gutter, 4), $sgh) * 0.5
   @else if type-of($gutter) == "map"
     @if $expectWithVertical == false
       $gr: sassyAutoGutterFallback(map-get($gutter, "right"), $sgh)
       $gl: sassyAutoGutterFallback(map-get($gutter, "left"), $sgh)
     @else
-      $gt: sassyAutoGutterFallback(map-get($gutter, "top"), $sgv) / 2
-      $gr: sassyAutoGutterFallback(map-get($gutter, "right"), $sgh) / 2
-      $gb: sassyAutoGutterFallback(map-get($gutter, "bottom"), $sgv) / 2
-      $gl: sassyAutoGutterFallback(map-get($gutter, "left"), $sgh) / 2
+      $gt: sassyAutoGutterFallback(map-get($gutter, "top"), $sgv) * 0.5
+      $gr: sassyAutoGutterFallback(map-get($gutter, "right"), $sgh) * 0.5
+      $gb: sassyAutoGutterFallback(map-get($gutter, "bottom"), $sgv) * 0.5
+      $gl: sassyAutoGutterFallback(map-get($gutter, "left"), $sgh) * 0.5
   @else if $gutter == true or $gutter == auto
     @if $expectWithVertical == false
       $gr: $sgh
       $gl: $gr
     @else
-      $gt: $sgv / 2
-      $gr: $sgh / 2
+      $gt: $sgv * 0.5
+      $gr: $sgh * 0.5
       $gb: $gt
       $gl: $gr
   @else if $gutter == false OR $gutter == off
@@ -71,7 +71,7 @@
       $gr: sassyAutoGutterFallback($gutter, $sgh)
       $gl: $gr
     @else
-      $gt: sassyAutoGutterFallback($gutter, $sgv) / 2
+      $gt: sassyAutoGutterFallback($gutter, $sgv) * 0.5
       $gr: $gt
       $gb: $gt
       $gl: $gt
@@ -227,9 +227,9 @@
     
     // Calculate flex basis
     @if $usePadding == false
-      flex-basis: calc(#{percentage($span / map-get($options, of))} - #{(map-get($g, left) + map-get($g, right))})
+      flex-basis: calc((100% / #{map-get($options, of)}) - #{(map-get($g, left) + map-get($g, right))})
     @else
-      flex-basis: #{percentage($span / map-get($options, of))}
+      flex-basis: calc(100% / #{map-get($options, of)})
 
     // Update margins or padding
     $margins: map-get($g, top) map-get($g, right) map-get($g, bottom) map-get($g, left)
@@ -242,17 +242,17 @@
     @if map-get($options, offset) != off
       @if map-get($options, offset) != 0
         @if $usePadding == true
-          padding-left: calc(#{percentage(1 / map-get($options, of))} * #{map-get($options, offset)})
+          padding-left: calc((100% / #{map-get($options, of)}) * #{map-get($options, offset)})
         @else
-          margin-left: calc(#{percentage(1 / map-get($options, of))} * #{map-get($options, offset)} + #{map-get($g, left)})
+          margin-left: calc((100% / #{map-get($options, of)}) * #{map-get($options, offset)} + #{map-get($g, left)})
     
     // Handle offset to the right
     @if map-get($options, offsetAfter) != off
       @if map-get($options, offsetAfter) != 0
         @if $usePadding == true
-          padding-right: calc(#{percentage(1 / map-get($options, of))} * #{map-get($options, offsetAfter)})
+          padding-right: calc((100% / #{map-get($options, of)}) * #{map-get($options, offsetAfter)})
         @else
-          margin-right: calc(#{percentage(1 / map-get($options, of))} * #{map-get($options, offsetAfter)} + #{map-get($g, right)})
+          margin-right: calc((100% / #{map-get($options, of)}) * #{map-get($options, offsetAfter)} + #{map-get($g, right)})
 
     // Handle order
     @if map-get($options, order) > 0
