@@ -227,9 +227,9 @@
     
     // Calculate flex basis
     @if $usePadding == false
-      flex-basis: calc((100% / #{map-get($options, of)}) - #{(map-get($g, left) + map-get($g, right))})
+      flex-basis: calc((100% * (#{$span} / #{map-get($options, of)})) - #{(map-get($g, left) + map-get($g, right))})
     @else
-      flex-basis: calc(100% / #{map-get($options, of)})
+      flex-basis: calc(100% * (#{$span} / #{map-get($options, of)}))
 
     // Update margins or padding
     $margins: map-get($g, top) map-get($g, right) map-get($g, bottom) map-get($g, left)
